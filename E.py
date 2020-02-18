@@ -42,21 +42,23 @@ print('_______________________________________________________')
 # Простые делители числа 13195 - это 5, 7, 13 и 29.
 
 # Каков самый большой делитель числа 600851475143, являющийся простым числом? (НЕ РЕШЕНО - не может найти для больших чисел, для маленьких находит !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
-x = 13195
-i = 1
-y = []
+x = 600851475143
+primeList = list()
 isPrime = True
-while i < x:
+y = list()
+for dig in range(math.ceil(x/2), 1, -1):
+    print(dig)
+    for delitel in range(2, math.ceil(math.sqrt(dig))+1):
+        if dig % delitel == 0 and dig != delitel:
+            isPrime = False
+            break
+    if isPrime:
+        primeList.append(dig)
     isPrime = True
-    if x%i == 0:
-        for el in range(2, math.ceil(math.sqrt(i))):
-            if i%el == 0 and el != i:
-                isPrime = False 
-                break
-        if isPrime:
-            y.append(i)
-    i+=1
-print(y[-1])
+for el in primeList:
+    if x%el == 0:
+        y.append(el)
+print(y)
 # Задача 4
 # Наибольшее произведение-палиндром
 # Число-палиндром с обеих сторон (справа налево и слева направо) читается одинаково. Самое большое число-палиндром, полученное умножением двух двузначных чисел – 9009 = 91 × 99.
@@ -82,6 +84,7 @@ for el in palindroms:
     if bigestPalindrom < int(el):
         bigestPalindrom = int(el)
 print('Самый большой палиндром полученый умножением двух трёхзначных чисел:',bigestPalindrom)
+print('_________________________________________________________')
 # Задача 5
 # Наименьшее кратное
 # 2520 - самое маленькое число, которое делится без остатка на все числа от 1 до 10.
