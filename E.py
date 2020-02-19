@@ -42,23 +42,22 @@ print('_______________________________________________________')
 # Простые делители числа 13195 - это 5, 7, 13 и 29.
 
 # Каков самый большой делитель числа 600851475143, являющийся простым числом? (НЕ РЕШЕНО - не может найти для больших чисел, для маленьких находит !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
-x = 600851475143
-primeList = list()
-isPrime = True
-y = list()
-for dig in range(math.ceil(x/2), 1, -1):
-    print(dig)
-    for delitel in range(2, math.ceil(math.sqrt(dig))+1):
-        if dig % delitel == 0 and dig != delitel:
-            isPrime = False
-            break
-    if isPrime:
-        primeList.append(dig)
-    isPrime = True
-for el in primeList:
-    if x%el == 0:
-        y.append(el)
-print(y)
+# x = 600851475143
+# primeList = list()
+# isPrime = True
+# y = list()
+# for dig in range(math.ceil(x/2), 1, -1):
+#     print(dig)
+#     for delitel in range(2, math.ceil(math.sqrt(dig))+1):
+#         if dig % delitel == 0 and dig != delitel:
+#             isPrime = False
+#             break
+#     if isPrime:
+#         primeList.append(dig)
+#     isPrime = True
+# for el in primeList:
+#     if x%el == 0:
+#         y.append(el)
 # Задача 4
 # Наибольшее произведение-палиндром
 # Число-палиндром с обеих сторон (справа налево и слева направо) читается одинаково. Самое большое число-палиндром, полученное умножением двух двузначных чисел – 9009 = 91 × 99.
